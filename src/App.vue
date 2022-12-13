@@ -1,26 +1,40 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="page">
+    <h1 class="page__title">Simple Weather App</h1>
+    <forecast-add-form />
+    <forecasts-list />
+  </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
+import ForecastAddForm from "./components/ForecastAddForm.vue";
+import ForecastsVue from "./components/Forecasts.vue";
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    "forecasts-list": ForecastsVue,
+    "forecast-add-form": ForecastAddForm,
   },
 };
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #0b1c39;
+}
+.page {
+  background: #0b1c39;
+  height: 100vh;
+  padding: 40px;
+}
+
+.page__title {
+  color: #fdfdfe;
+  padding: 0 0 20px;
 }
 </style>
